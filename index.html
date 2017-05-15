@@ -283,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/居中/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/水平居中布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青年">
@@ -302,7 +302,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/11/居中/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/05/15/水平居中布局/" itemprop="url">Unbenannt</a></h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-11T17:13:12+08:00">
-                2017-05-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-15T17:11:04+08:00">
+                2017-05-15
               </time>
             
 
@@ -351,180 +351,118 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	#parent&#123;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: #eee;</div><div class="line">	&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;parent&quot;&gt;</div><div class="line">		&lt;div id=&quot;child&quot;&gt;</div><div class="line">			</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h4 id="1-水平居中"><a href="#1-水平居中" class="headerlink" title="1.水平居中"></a>1.水平居中</h4><blockquote>
-<p>方法一：margin:0 auto; （最常用的居中布局方式,元素宽度已知（块级元素有宽度，内联元素有内容）,未浮动，一定是用在元素本身不是父元素。父元素如果是块级元素则不用设置width默认占据一行。父元素如果是内联元素则需要display:inline-block,再设置宽度。如果是多个内联元素或者多个块级元素，则需要都放在一个块级元素里再使用此方法。因为设置完了display: inline-block 之后margin：0 auto无效了，或者直接使用第二种方法。</p>
-<p>方法二：text-align和inline-block的结合（设置父元素的text-align为center）。<br>            这种方式最好应用于图片、按钮、文字之类的居中模式，否则就需要借助inline-block来进行居中布局。多个块级元素水平排列居中布局时更适合选用这种方法。</p>
-<p>方法三：position绝对定位来实现居中布局。<br>            ==适用于块级元素不给出宽高的情况下==(需要借助transtrom的tanslateX方法)，当又需要对多个child进行居中时需要在child外层再加一个div并对其进行定位。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">   #parent&#123;</div><div class="line">  position: relative;</div><div class="line">&#125;</div><div class="line">#child&#123;</div><div class="line">  position: absolute;</div><div class="line">  left: 50%;</div><div class="line">  top: 0;</div><div class="line">  transform:translateX(-50%) </div><div class="line">  background-color: #ccc;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>方法四：利用flex弹性布局的一个属性子元素是否有宽度不重要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">		display: flex;</div><div class="line">		justify-content:center;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
-<p>方法五、浮动实现水平居中的方法</p>
-</blockquote>
-<pre><code>.child{ 
-float: left;
-position: relative;
-right: 50%;
-}
-#part{
-    float:left;
-    width:100%;
-    overflow: hidden;
-    position: relative; 
-}
-#part2{
-    clear: left;
-    float: left;
-    position: relative;
-    left:50%; 
-}
-&lt;div id=&quot;part&quot;&gt;
-&lt;div id=&quot;part2&quot;&gt; 
-&lt;div class=&quot;child&quot;&gt;one&lt;/div&gt;
-&lt;div class=&quot;child&quot;&gt;two&lt;/div&gt;
-&lt;div class=&quot;child&quot;&gt;thr&lt;/div&gt;
-&lt;div class=&quot;child&quot;&gt;four&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><blockquote>
-<p>方法六 CSS3的fit-content实现水平居中方法</p>
-</blockquote>
-<pre><code>.child{
-    float: left;
-}
-#part2{
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content; 
-    margin: auto;
-}
-</code></pre><h4 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h4><blockquote>
-<p>方法一</p>
-</blockquote>
-<pre><code>1 子元素 div 绝对定位
-2 父元素需要被定位
-3 子元素 top、bottom、left、right 四个位置值均为 0
-4 子元素 margin: auto;
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.first-way&#123;</div><div class="line">		width:100px;</div><div class="line">		height: 100px;</div><div class="line">		background-color: red;</div><div class="line">		margin: 0 auto;</div><div class="line">	&#125;</div><div class="line">	.second-way&#123;</div><div class="line">		width:100%;</div><div class="line">		text-align: center;</div><div class="line">		overflow: hidden;</div><div class="line">	&#125;</div><div class="line">	.second-child&#123;</div><div class="line">		display: inline-block;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	.third-way&#123;</div><div class="line">		position: absolute;</div><div class="line">		left:50%;</div><div class="line">		top:0%; /*默认应该是0%*/</div><div class="line">	 	transform:translateX(-50%); /*向左移动元素宽度的一半长度*/</div><div class="line">		width:300px;</div><div class="line">		height:100px;</div><div class="line">		border: 1px solid green;</div><div class="line">	&#125;</div><div class="line">	.fourth-way&#123;</div><div class="line">		display: flex;</div><div class="line">		justify-content:center;</div><div class="line">	&#125;</div><div class="line">	.fourth-way &gt; div&#123;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line">	&#125;</div><div class="line">	.five-way&#123;</div><div class="line">		width: -moz-fit-content;</div><div class="line">        width: -webkit-fit-content;</div><div class="line">        width: fit-content; </div><div class="line">        margin: auto;</div><div class="line">	&#125;</div><div class="line">	.five-way &gt; div&#123;</div><div class="line">		float:left;</div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;first-way&quot;&gt;</div><div class="line">		第一种方式</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;/br&gt;</div><div class="line">	&lt;div class=&quot;second-way&quot;&gt;</div><div class="line">		&lt;div class=&quot;second-child&quot;&gt;第二种方式&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;third-way&quot;&gt;</div><div class="line">		第三种方式</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/br&gt;</div><div class="line">	&lt;div class=&quot;fourth-way&quot;&gt;</div><div class="line">		&lt;div&gt;第四种&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div&gt;</div><div class="line">	&lt;/br&gt;</div><div class="line">	&lt;div class=&quot;five-way&quot;&gt;</div><div class="line">		&lt;div&gt;</div><div class="line">			第五种</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;	</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
 
-#parent{
-    width: 100%;
-    height:100%;
-    position: fixed;    
-}
-#child{
-    width: 200px; 
-    height: 100px; 
-    position: absolute; 
-    top: 0; 
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
-    margin: auto; 
-    background-color: #ccc;
-}
-</code></pre><blockquote>
-<p>方法二<br>    利用position的绝对定位及负外边框距来实现。</p>
-</blockquote>
-<pre><code>#parent{ 
-position: fixed; 
-width: 100%; 
-height: 100%; 
-} 
-#child{ 
-position: absolute; 
-left: 50%; 
-top: 50%; 
-width: 400px; 
-height: 200px; 
-margin-top: -height/2px; 
-margin-left: -width/2px; 
-background-color: #ccc; 
-}
-</code></pre><blockquote>
-<p>方法三 </p>
-</blockquote>
-<pre><code>对于未给出宽高的元素，又需要运用transform并且运用绝对定位和正外边距来实现。
-#parent{
-    position: relative;
-}
-#child{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform:translateX(-50%);
-}
-</code></pre><blockquote>
-<p>方法四 运用flex布局，要给父元素一个高度，不然无法垂直居中</p>
-</blockquote>
-<pre><code>#parent{
-display: flex;
-justify-content:center;
-height:100%;
-}
-#child{
-align-self:center; 
-}
-</code></pre><h3 id="3-左边固定，右边自适应的两列布局"><a href="#3-左边固定，右边自适应的两列布局" class="headerlink" title="3.左边固定，右边自适应的两列布局"></a>3.左边固定，右边自适应的两列布局</h3><pre><code>方式一：float+margin 需要清除浮动
-#left{
-float: left;
-width: 100px;
-}
-#right{
-margin-left: 120px;
-}
-方式二：float+overfloww 不用清除浮动
-#left{ 
-float: left; 
-width: 100px; 
-margin-right: 20px;&lt;!--好歹留个空啊嘿嘿--&gt;
-} 
-#right{ overflow: hidden; }
-方式三：float+margin+position
-#parent{
-position: relative;
-}
-#left{
-    float: left;
-    width: 100px;
-    background-color: #ccc;
+    <div>
+      
+    </div>
 
-}
-#right{
-    position: absolute;
-    top: 0;
-    left: 120px;
-    background-color:pink; 
-}
-方式四：flex
-#parent{ display: flex; } 
-#left{ 
-width: 100px; 
-margin-right: 20px;
-} 
-#right{ 
-flex: 1; 
-}
-</code></pre><h3 id="4-右边固定，左边自适应的两列布局-–与3类似"><a href="#4-右边固定，左边自适应的两列布局-–与3类似" class="headerlink" title="4.右边固定，左边自适应的两列布局 –与3类似"></a>4.右边固定，左边自适应的两列布局 –与3类似</h3><h3 id="5-两边固定中间自适应"><a href="#5-两边固定中间自适应" class="headerlink" title="5.两边固定中间自适应"></a>5.两边固定中间自适应</h3><pre><code>方式一：使用float
-.left{ float: left; width: 200px; height: 200px; } 
-.right{ float: right; width: 100px; height: 100px; } 
-.middle{ margin:0 120px 0 220px; }
+    <div>
+      
+    </div>
 
-方式二：position绝对定位
-.parent{ position: relative; } 
-.left{ position: absolute; width: 200px; height: 200px; top: 0; left: 0; } 
-.right{ position: absolute; top: 0; right: 0; width: 100px; height: 100px; } 
-.middle{ margin:0 120px 0 220px; }
+    <div>
+      
+    </div>
 
-方式三：flex
-本人想法：
-.parent{ display: flex; justify-content:space-between;} 
-.left{ width: 200px; height: 200px;}
-.right{ width: 100px; height: 100px;} 
-.middle{}
-例子给出：
-.parent{ display: flex; } 
-.left{ width: 200px; height: 200px; }
-.right{ width: 100px; height: 100px; }
-.middle{ flex: 1; margin:0 20px; }
-</code></pre>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/水平垂直居中布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青年">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/face.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HelloWorld">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/15/水平垂直居中布局/" itemprop="url">Unbenannt</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-15T17:11:04+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	body,html&#123;</div><div class="line">		height: 100%;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	.first-way&#123;</div><div class="line">		height: 100%;</div><div class="line">		display: flex;</div><div class="line">		justify-content:center;</div><div class="line">	&#125;</div><div class="line">	.first-way &gt; div&#123;</div><div class="line">		align-self:center; </div><div class="line">		width:100px;</div><div class="line">		height:100px;</div><div class="line">		background-color: red;</div><div class="line">	&#125;</div><div class="line">	/* .second-way&#123;</div><div class="line">		width:100%;</div><div class="line">		height: 100%;</div><div class="line">	position: relative;</div><div class="line">	&#125; */</div><div class="line">	.second-way &#123;</div><div class="line">		position: absolute;</div><div class="line">		left:50%;</div><div class="line">		top:50%;</div><div class="line">		transform:translate(-50%,-50%);</div><div class="line">		width:150px;</div><div class="line">		height: 150px;</div><div class="line">		border: 1px solid green;</div><div class="line">	&#125;</div><div class="line">	.third-way &gt; div&#123;</div><div class="line">		position: absolute;</div><div class="line">		top:0;</div><div class="line">		left: 0;</div><div class="line">		right: 0;</div><div class="line">		bottom: 0;</div><div class="line">		margin: auto;</div><div class="line">		width: 200px;</div><div class="line">		height: 200px;</div><div class="line">		border: 1px solid black;</div><div class="line">	&#125;</div><div class="line">	.fourth-way&#123;</div><div class="line">		position: absolute;</div><div class="line">		left:50%;</div><div class="line">		top:50%;</div><div class="line">		width:250px;</div><div class="line">		height: 250px;</div><div class="line">		margin-top:-125px;</div><div class="line">		margin-left: -125px; </div><div class="line">		border: 1px solid red;</div><div class="line">	&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;first-way&quot;&gt;</div><div class="line">		&lt;div&gt;第一种方式&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;second-way&quot;&gt;</div><div class="line">		&lt;div &gt;第二种方式&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;/br&gt;</div><div class="line">	 &lt;div class=&quot;third-way&quot;&gt;</div><div class="line">		&lt;div&gt;第三种方式&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;fourth-way&quot;&gt;</div><div class="line">		&lt;div&gt;第四种&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
           
         
       
@@ -723,7 +661,7 @@ flex: 1;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
